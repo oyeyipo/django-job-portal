@@ -1,7 +1,3 @@
-h1 {
-  color: red;
-}
-
-h1 {
-  font-size: 200px;
-}
+@import "base";
+@import "components";
+@import "layout";
