@@ -31,7 +31,11 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    #### Custom Apps ####
+    "accounts.apps.AccountsConfig",
+    "core.apps.CoreConfig",
     "jobs.apps.JobsConfig",
+    ###################
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -49,6 +53,9 @@ MIDDLEWARE = [
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
+
+# Custom authentication user model
+AUTH_USER_MODEL = "accounts.User"
 
 ROOT_URLCONF = "jobsite.urls"
 
