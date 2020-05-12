@@ -10,8 +10,9 @@ from django.utils import timezone
 from .manager import UserManager
 
 
-
 class User(AbstractBaseUser, PermissionsMixin, TimestampedModel):
+    """ # TODO: docs """
+
     # username = models.CharField(db_index=True, max_length=255, unique=True)
     APPLICANT = 1
     TEST_CANDIDATE = 2

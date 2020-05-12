@@ -5,12 +5,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,700">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Montserrat:400,700">
+    <link rel="shortcut icon" href="favicon.png">
     <link rel="stylesheet" href="{% static 'css/style.css' %}" />
-    <title>Home | Jobs and Careers</title>
+    {% block styles %}{% endblock %}
+    <title>{% block title %} {% endblock %} | Jobs and Careers</title>
 </head>
 
 <body>
-    <h1>Business Brace Jobs and Careers</h1>
+    {% block navigation %}
+    <header class="header">
+        <a href="/" class="nav-logo">
+            BB
+        </a>
+        <h1>Business Brace Jobs and Careers</h1>
+        <h2></h2>
+
+        <nav class="navigation">
+            <ul class="navigation__list">
+                <li class="navigation__list__item">
+                    item1
+                </li>
+            </ul>
+        </nav>
+    </header>
+    {% endblock navigation %}
 
 
     {% block content %}
