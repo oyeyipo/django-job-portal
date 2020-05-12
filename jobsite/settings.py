@@ -128,7 +128,7 @@ STATICFILES_DIRS = [
 ]
 
 # Send all exceptions to the terminal
-""" 
+
 LOGGING = {
     "version": 1,
     "disable_existing_loggers": False,
@@ -136,5 +136,3 @@ LOGGING = {
     "loggers": {"django": {"handlers": ["console"],},},
     "root": {"level": "INFO"},
 }
-
-"""
