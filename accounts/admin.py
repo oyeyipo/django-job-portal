@@ -80,7 +80,7 @@ class UserAdmin(BaseUserAdmin):
                     ("is_admin", "is_active", "is_superuser"),
                     "groups",
                     "user_permissions",
-                    "status",
+                    "level",
                 ),
             },
         ),

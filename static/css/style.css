@@ -232,6 +232,7 @@ body {
   background-color: var(--color-grey-light-2);
   padding: 10rem 10rem;
   position: relative;
+  height: 20rem;
 }
 .jumbotron__text-box {
   position: absolute;

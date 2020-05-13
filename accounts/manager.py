@@ -11,6 +11,8 @@ class UserManager(BaseUserManager):
     to create `User` objects.
     """
 
+    use_in_migrations = True
+
     def create_user(self, email, password=None):
         """
         Creates and saves a User with the given email, username and password.

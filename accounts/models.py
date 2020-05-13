@@ -1,12 +1,12 @@
-from django.contrib.auth.models import (
-    AbstractBaseUser,
-    PermissionsMixin,
-    AbstractUser,
-)
+from django.contrib.auth.models import AbstractBaseUser, PermissionsMixin
+from django.core.mail import send_mail
 from django.db import models
+from django.utils import timezone
+
+from django.contrib.auth.base_user import AbstractBaseUser
 
 from core.models import TimestampedModel
-from django.utils import timezone
+
 from .manager import UserManager
 
 
@@ -31,7 +31,7 @@ class User(AbstractBaseUser, PermissionsMixin, TimestampedModel):
     email = models.EmailField(db_index=True, unique=True)
     is_active = models.BooleanField(default=True)
     is_admin = models.BooleanField(default=False)
-    status = models.PositiveSmallIntegerField(choices=STATUS_CHOICES, default=APPLICANT)
+    level = models.PositiveSmallIntegerField(choices=STATUS_CHOICES, default=APPLICANT)
 
     objects = UserManager()
 
@@ -65,3 +65,7 @@ class User(AbstractBaseUser, PermissionsMixin, TimestampedModel):
     def is_staff(self):
         "Is the user member of staff?"
         return self.is_admin
+
+    def email_user(self, subject, message, from_email=None, **kwargs):
+        """ Sends an email to this User. """
+        send_mail(subject, message, from_email, [self.email], **kwargs)
