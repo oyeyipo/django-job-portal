@@ -1,6 +1,6 @@
 from django.urls import path
 
-from .views import home_page
+from .views import home_page, detail_page
 
 """  Namespace usage:
 
@@ -10,4 +10,5 @@ from .views import home_page
 app_name = "jobs"
 urlpatterns = [
     path("", home_page, name="home"),
+    path("<int:job_id>/", detail_page, name="detail"),
 ]

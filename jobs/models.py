@@ -19,11 +19,26 @@ class Job(TimestampedModel):
         (INTERN, "Internship"),
     )
 
+    FRONTEND = 1
+    UXUI = 2
+    BACKEND = 3
+    FULLSTACK = 4
+    DEVOPS = 5
+
+    CATIGORY = (
+        (FRONTEND, "Frontend"),
+        (UXUI, "UX/UI design"),
+        (BACKEND, "Backend"),
+        (FULLSTACK, "FullStack"),
+        (DEVOPS, "Devops"),
+    )
+
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     title = models.CharField(max_length=300)
     description = models.TextField()
     location = models.CharField(max_length=150)
     job_type = models.PositiveSmallIntegerField(choices=JOB_TYPE, default=INTERN)
+    category = models.PositiveSmallIntegerField(choices=CATIGORY, default=FULLSTACK)
 
     def __str__(self):
         return self.title

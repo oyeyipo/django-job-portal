@@ -16,26 +16,43 @@
 <body>
     {% block navigation %}
     <header class="header">
-        <a href="/" class="nav-logo">
-            BB
-        </a>
-        <h1>Business Brace Jobs and Careers</h1>
-        <h2></h2>
+        <div class="header__nav-box">
+            <a href="/" class="nav-logo">
+                <img src="{% static 'img/logo-white.png' %}" alt="logo" class="header__logo">
+            </a>
 
-        <nav class="navigation">
-            <ul class="navigation__list">
-                <li class="navigation__list__item">
-                    item1
-                </li>
-            </ul>
-        </nav>
+            <nav class="header__nav-box navigation__nav">
+                <ul class="navigation__list">
+                    <li class="navigation__item navigation__current">
+                        <a href="/" class="navigation__link">Home</a>
+                    </li>
+                    <li class="navigation__item">
+                        <a href="#" class="navigation__link">About Us</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+
+        <div class="header__text-box">
+            <h1 class="heading-primary">
+                <span class="heading-primary--main">Business Brace Jobs and Careers</span>
+                <span class="heading-primary--sub">Join in us changing the world with tech</span>
+            </h1>
+
+            <a href="#position" class="btn btn--white">See Positions</a>
+        </div>
+
+
     </header>
     {% endblock navigation %}
-
 
     {% block content %}
 
     {% endblock content %}
+
+    <footer class="footer">
+        <p>&copy;2020, Business Brace.</p>
+    </footer>
 
 </body>
 

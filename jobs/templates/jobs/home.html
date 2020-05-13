@@ -1,14 +1,70 @@
 {% extends 'base.html' %}
 
 
+{% block title %}Home{% endblock title %}
+
+
 {% block content %}
-<h2>Hello from home</h2>
 
-<ul>
+<main class="main">
+    <section class="section-about">
+        <h2 class="heading-secondary">
+            About Us
+        </h2>
+        <div class="about-box">
+            <p class="paragraph">Lorem ipsum dolor sit amet consectetur adipisicing elit. Est quod iusto doloribus aut
+                aspernatur fugit,
+                dolores enim eum ut explicabo vero, esse alias harum ipsa accusamus impedit nisi. At, voluptas. Lorem
+                ipsum
+                dolor sit amet consectetur adipisicing elit. Est quod iusto doloribus aut
+                aspernatur fugit,
+                dolores enim eum ut explicabo vero, esse alias harum ipsa accusamus impedit nisi. At, voluptas.</p>
 
-    {% for item in job_items %}
-    <li>{{item.title}}</li>
-    {% endfor %}
+            <p class="paragraph">Lorem ipsum dolor sit amet consectetur adipisicing elit. Est quod iusto doloribus aut
+                aspernatur fugit,
+                dolores enim eum ut explicabo vero, esse alias harum ipsa accusamus impedit nisi. At, voluptas.
+                dolores enim eum ut explicabo vero, esse alias harum ipsa accusamus impedit nisi. At, voluptas.
+            </p>
 
-</ul>
+            <p class="paragraph">Lorem ipsum dolor sit amet consectetur adipisicing elit. Est quod iusto doloribus aut
+                aspernatur fugit,
+                dolores enim eum ut explicabo vero, esse alias harum ipsa accusamus impedit nisi. At, voluptas.</p>
+        </div>
+
+    </section>
+
+    <section id="position" class="section-position">
+        <h2 class="heading-secondary">Positions</h2>
+        <ul class="position-box">
+            {% for item in job_items %}
+            <li class="position__list">
+                <a href="{% url 'jobs:detail' item.pk %}" class="position__link">
+                    <div class="card">
+                        <div class="position__heading">
+                            <h3 class="position__title">{{item.title}}, {{item.get_category_display}},
+                                {{item.get_job_type_display}}</h3>
+                            <a href="#" class="btn--text">Apply</a>
+                        </div>
+
+                        <div class="position__location">
+                            <svg class="location__icon" version="1.1" xmlns="http://www.w3.org/2000/svg" width="32"
+                                height="32" viewBox="0 0 32 32">
+                                <title>location</title>
+                                <path
+                                    d="M16 0c-5.523 0-10 4.477-10 10 0 10 10 22 10 22s10-12 10-22c0-5.523-4.477-10-10-10zM16 16c-3.314 0-6-2.686-6-6s2.686-6 6-6 6 2.686 6 6-2.686 6-6 6z">
+                                </path>
+                            </svg>
+
+                            <span class="location">{{item.location}}</span>
+                        </div>
+                    </div>
+
+                </a>
+            </li>
+            {% endfor %}
+        </ul>
+    </section>
+</main>
+
+
 {% endblock content %}

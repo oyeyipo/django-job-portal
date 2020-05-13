@@ -1,0 +1,106 @@
+//////////////////////////////////////////
+// About Section
+
+.section-about {
+  background-color: var(--color-grey-light-1);
+  padding: 5rem 0;
+}
+
+.about-box {
+  width: 45%;
+  margin: 0 auto;
+}
+
+//////////////////////////////////////////
+// Positions Section
+
+.section-position {
+  background-color: var(--color-grey-light-1);
+  padding: 5rem 0;
+}
+
+.position-box {
+  width: 45%;
+  margin: 0 auto;
+  list-style: none;
+}
+
+.position {
+  &__list {
+    &:not(:last-child) {
+      margin-bottom: 5rem;
+    }
+  }
+
+  &__title {
+    font-size: 2.3rem;
+    font-weight: 600;
+    text-transform: capitalize;
+  }
+
+  &__location {
+    display: flex;
+  }
+
+  &__heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__link {
+    &:link,
+    &:visited,
+    &:active {
+      text-decoration: none;
+      color: var(--color-grey-dark-2);
+    }
+  }
+}
+
+.position-detail {
+  padding: 10rem;
+  display: flex;
+  justify-content: space-between;
+
+  &__img {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  &__img-box {
+    flex: 1 0 50%;
+  }
+
+  &__text {
+  }
+  &__category {
+    font-size: 4rem;
+    color: var(--color-grey-dark-3);
+  }
+
+  &__date {
+    font-size: 2rem;
+    font-weight: 700;
+  }
+
+  &__salary {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+  &__description {
+    font-size: var(--default-font-size);
+    margin: 2rem 0;
+  }
+}
+
+//////////////////////////////////////////
+// footer
+footer {
+  background-color: var(--color-primary-dark);
+  font-size: 1.5rem;
+  color: var(--color-grey-light-1);
+  padding: 2rem;
+  text-align: center;
+}

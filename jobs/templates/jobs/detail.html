@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}{{job.title}}{% endblock title %}
+{% block navigation %}
+<header class="navigation__header">
+    <a href="/" class="nav-logo">
+        <img src="{% static 'img/logo-white.png' %}" alt="logo" class="header__logo">
+    </a>
+
+    <nav class="header__nav-box navigation__nav">
+        <ul class="navigation__list">
+            <li class="navigation__item navigation__current">
+                <a href="/" class="navigation__link">Home</a>
+            </li>
+            <li class="navigation__item">
+                <a href="#" class="navigation__link">About Us</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+{% endblock navigation %}
+
+
+{% block content %}
+<main class="main">
+    <div class="jumbotron">
+        <div class="jumbotron__text-box">
+            <h1 class="jumbotron__heading">{{job.title}}</h1>
+
+            <div class="jumbotron__detail">
+                <span class="jumbotron__detail--1">
+                    <svg class="location__icon" version="1.1" xmlns="http://www.w3.org/2000/svg" width="32" height="32"
+                        viewBox="0 0 32 32">
+                        <title>location</title>
+                        <path
+                            d="M16 0c-5.523 0-10 4.477-10 10 0 10 10 22 10 22s10-12 10-22c0-5.523-4.477-10-10-10zM16 16c-3.314 0-6-2.686-6-6s2.686-6 6-6 6 2.686 6 6-2.686 6-6 6z">
+                        </path>
+                    </svg>
+
+                    <span class="location">{{job.location}}</span>
+                </span>
+                <span class="jumbotron__detail--2">
+                    POSTED {{job.updated_at|date:"D d M Y"}}
+                </span>
+                <span class="jumbotron__detail--3">
+                    {{job.get_job_type_display}}
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <section class="position-detail">
+        <div class="position-detail__text">
+            <h3 class="position-detail__category">Category: {{job.get_category_display}}</h3>
+
+            <p class="position-detail__date">UPDATED: {{job.created_at|timesince}} ago</p>
+            <p class="position-detail__salary">Salary: Negotiable</p>
+
+            <p class="position-detail__description">
+                {{job.description}}
+            </p>
+
+            <a href="#" class="btn--text">Apply Now!</a>
+
+        </div>
+        <div class="position-detail__img-box">
+            <img src="{% static 'img/work.png' %}" alt="image" class="position-detail__img">
+        </div>
+    </section>
+</main>
+{% endblock content %}
