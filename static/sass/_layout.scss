@@ -63,6 +63,21 @@
   display: flex;
   justify-content: space-between;
 
+  @media only screen and (max-width: $bp-smallest) {
+    flex-direction: column;
+    padding: 10rem 3rem;
+  }
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    & > *:not(:last-child) {
+      align-self: start;
+    }
+  }
+
   &__img {
     width: 90%;
     margin: 0 auto;
@@ -72,8 +87,6 @@
     flex: 1 0 50%;
   }
 
-  &__text {
-  }
   &__category {
     font-size: 4rem;
     color: var(--color-grey-dark-3);
